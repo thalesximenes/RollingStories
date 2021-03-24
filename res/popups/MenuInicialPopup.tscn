@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://res/popups/MenuPopup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://res/popups/menu_inicial_popup.gd" type="Script" id=2]
+
+[node name="MenuInicialPopup" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="ColorRect" parent="." index="0"]
+anchor_top = -0.002081
+anchor_bottom = 0.997919
+margin_left = -2.99652
+margin_right = -2.99646
+color = Color( 0.333333, 0.333333, 0.333333, 0.666667 )
+[connection signal="pressed" from="HBoxContainer2/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_YesButton_pressed"]
+[connection signal="pressed" from="HBoxContainer2/VBoxContainer/HBoxContainer/NoButton" to="." method="_on_NoButton_pressed"]
