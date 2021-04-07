@@ -17,7 +17,6 @@
 [ext_resource path="res://res/buttons/MenuButton.tscn" type="PackedScene" id=15]
 
 [node name="PopupRules" type="Popup"]
-visible = true
 margin_left = 627.0
 margin_top = 228.0
 margin_right = 1689.0

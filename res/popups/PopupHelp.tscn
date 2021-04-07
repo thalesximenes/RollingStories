@@ -16,6 +16,7 @@
 [ext_resource path="res://res/Assets/Popup/Sair.png" type="Texture" id=14]
 
 [node name="PopupHelp" type="Popup"]
+visible = true
 margin_left = 600.0
 margin_top = 228.0
 margin_right = 1495.0
@@ -57,7 +58,7 @@ margin_bottom = 401.0
 alignment = 1
 
 [node name="BackButton" parent="Menu/Page/VBoxContainer" instance=ExtResource( 1 )]
-modulate = Color( 0.266667, 0.266667, 0.266667, 1 )
+modulate = Color( 0.266667, 0.266667, 0.266667, 0 )
 margin_top = 161.0
 margin_bottom = 239.0
 
