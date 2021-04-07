@@ -1,5 +1,7 @@
 extends AudioStreamPlayer
 
+
+
 func _process(delta):
 	if (GLOBAL.musicStatus && !self.playing):
 		self.playing = true;

@@ -4,7 +4,6 @@ extends TextureButton
 func _ready():
 	pass # Replace with function body.
 
-
 func _on_TextureButton_pressed():
 	if (GLOBAL.soundStatus):
 		get_node("AudioStreamPlayer").play(0.60)

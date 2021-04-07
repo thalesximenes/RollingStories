@@ -5,7 +5,9 @@ var menuPopUp
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	menuPopUp = get_node("ModesPopUp")
+	BACKGROUND_SOUND.volume_db = -16;
+	BACKGROUND_SOUND.play();
+	menuPopUp = get_node("ModesPopUp");
 	pass # Replace with function body.
 
 # Volta para a tela inicial, caso pressionado o botão

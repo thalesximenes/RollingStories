@@ -5,6 +5,6 @@
 
 [node name="Backgroundsound" type="AudioStreamPlayer"]
 stream = ExtResource( 2 )
-volume_db = -15.0
+volume_db = -16.0
 autoplay = true
 script = ExtResource( 1 )

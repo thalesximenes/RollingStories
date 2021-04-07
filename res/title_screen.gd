@@ -8,6 +8,8 @@ var showRules = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	BACKGROUND_SOUND.volume_db = -34
+	BACKGROUND_SOUND.play();
 	rulesPopUp = get_node("PopupRules")
 	creditsPopUp = get_node("PopupCredits")
 	GLOBAL.dicesUsed.clear();

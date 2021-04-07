@@ -139,9 +139,9 @@ __meta__ = {
 
 [node name="TextureButton2" type="TextureButton" parent="."]
 margin_left = 1094.0
-margin_top = 48.0
+margin_top = 47.0
 margin_right = 1164.0
-margin_bottom = 118.0
+margin_bottom = 117.0
 rect_scale = Vector2( 0.667, 0.667 )
 texture_normal = ExtResource( 6 )
 __meta__ = {

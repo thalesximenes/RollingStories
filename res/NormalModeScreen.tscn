@@ -20,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_horizontal_guides_": [ 106.5 ],
 "_edit_use_anchors_": false
 }
 
@@ -42,16 +43,16 @@ __meta__ = {
 
 [node name="Restart" parent="." instance=ExtResource( 12 )]
 margin_left = 1648.0
-margin_top = 75.6216
+margin_top = 70.0
 margin_right = 1718.0
-margin_bottom = 145.622
+margin_bottom = 140.0
 texture_normal = ExtResource( 4 )
 
 [node name="Exit" parent="." instance=ExtResource( 12 )]
-margin_left = 1748.67
-margin_top = 87.5
-margin_right = 1838.67
-margin_bottom = 141.5
+margin_left = 1743.0
+margin_top = 80.0
+margin_right = 1833.0
+margin_bottom = 134.0
 texture_normal = ExtResource( 7 )
 
 [node name="Dices" type="HBoxContainer" parent="."]

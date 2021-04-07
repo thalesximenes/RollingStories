@@ -26,11 +26,15 @@ func _on_TextureRect_pressed():
 # Muda de cena depois da animação do dado
 func _on_AnimatedSprite_animation_finished():
 	if (animatedSprite == 2):
-		if (GLOBAL.mode == 0):
-			get_tree().change_scene("res://res/NormalModeScreen.tscn")
-		else:
-			get_tree().change_scene("res://res/RapidModeScreen.tscn")
+		$FadeIn.show();
+		$FadeIn.fade_in();
 	else: 
 		animatedSprite += 1
 	pass # Replace with function body.
 
+func _on_FadeIn_fade_finished():
+	if (GLOBAL.mode == 0):
+		get_tree().change_scene("res://res/NormalModeScreen.tscn")
+	elif (GLOBAL.mode == 1):
+		get_tree().change_scene("res://res/RapidModeScreen.tscn")
+	pass # Replace with function body.
