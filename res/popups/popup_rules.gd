@@ -62,5 +62,5 @@ func _on_FowardButton_pressed():
 
 func _on_Exit_pressed():
 	get_parent()._on_RulesButton_pressed();
-	get_parent().get_node("Menu/CenterRow/Buttons/RulesButton").pressed = false
+	get_parent().get_node("Menu/CenterRow/VBoxContainer/Buttons/RulesButton").pressed = false
 	pass # Replace with function body.

@@ -1,6 +1,5 @@
 extends Control
 
-var exitPopUp
 var rulesPopUp
 var creditsPopUp
 var menuPopUp
@@ -9,7 +8,6 @@ var showRules = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	exitPopUp = get_node("MenuButtonPopUp")
 	rulesPopUp = get_node("PopupRules")
 	creditsPopUp = get_node("PopupCredits")
 	GLOBAL.dicesUsed.clear();
@@ -23,6 +21,7 @@ func _on_FadeIn_fade_finished():
 # Ativa o efeito de Fade_in
 func _on_NewGameButton_pressed():
 	rulesPopUp.hide()
+	creditsPopUp.hide()
 	$FadeIn.show()
 	$FadeIn.fade_in()
 	pass # Replace with function body.

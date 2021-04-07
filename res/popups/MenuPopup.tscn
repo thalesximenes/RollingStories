@@ -6,6 +6,7 @@
 [ext_resource path="res://res/Assets/Popup/Confirm/Window.png" type="Texture" id=4]
 
 [node name="MenuPopup" type="Popup"]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -21,9 +22,9 @@ __meta__ = {
 }
 
 [node name="ColorRect2" type="TextureRect" parent="."]
-margin_left = 545.0
+margin_left = 553.0
 margin_top = 281.0
-margin_right = 1393.0
+margin_right = 1401.0
 margin_bottom = 841.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -33,9 +34,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
-margin_left = 582.0
+margin_left = 590.0
 margin_top = 366.0
-margin_right = 1332.0
+margin_right = 1340.0
 margin_bottom = 711.0
 rect_min_size = Vector2( 750, 220 )
 size_flags_horizontal = 0

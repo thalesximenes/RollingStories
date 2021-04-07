@@ -4,6 +4,7 @@
 [ext_resource path="res://res/popups/leave_popup.gd" type="Script" id=2]
 
 [node name="LeavePopup" instance=ExtResource( 1 )]
+visible = true
 script = ExtResource( 2 )
 [connection signal="pressed" from="HBoxContainer2/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_YesButton_pressed"]
 [connection signal="pressed" from="HBoxContainer2/VBoxContainer/HBoxContainer/NoButton" to="." method="_on_NoButton_pressed"]
