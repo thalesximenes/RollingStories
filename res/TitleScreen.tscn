@@ -1,115 +1,104 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://res/buttons/CreditsButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://res/buttons/NewGameButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://res/buttons/RulesButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://res/Font/montserrat_78.tres" type="DynamicFont" id=4]
+[ext_resource path="res://res/Assets/LOGO.png" type="Texture" id=4]
 [ext_resource path="res://res/fade_in/FadeIn.tscn" type="PackedScene" id=5]
-[ext_resource path="res://icon.png" type="Texture" id=6]
-[ext_resource path="res://res/popups/MenuInicialPopup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://res/popups/PopupRules.tscn" type="PackedScene" id=8]
 [ext_resource path="res://res/title_screen.gd" type="Script" id=9]
+[ext_resource path="res://res/popups/PopupCredits.tscn" type="PackedScene" id=10]
+[ext_resource path="res://res/Texture.tscn" type="PackedScene" id=11]
+[ext_resource path="res://res/Assets/Buttons/Créditos_Pressed.png" type="Texture" id=12]
+[ext_resource path="res://res/Assets/pattern background 1.png" type="Texture" id=13]
 
 [node name="TitleScreen" type="Control"]
 anchor_top = -0.00247472
 anchor_right = 1.0
 anchor_bottom = 0.997525
-margin_top = 1.7818
-margin_bottom = 1.7818
+margin_top = 2.6727
+margin_bottom = 2.67273
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-mouse_out = Color( 1, 1, 1, 1 )
-mouse_over = Color( 1, 0.592157, 0, 1 )
 
-[node name="Settings" type="Button" parent="."]
-margin_left = 1060.0
-margin_top = 20.0
-margin_right = 1136.0
-margin_bottom = 90.0
-icon = ExtResource( 6 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Exit" type="Button" parent="."]
-margin_left = 1140.0
-margin_top = 20.0
-margin_right = 1216.0
-margin_bottom = 90.0
-icon = ExtResource( 6 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Texture" parent="." instance=ExtResource( 11 )]
+modulate = Color( 1, 1, 1, 0.25098 )
+margin_right = 5001.0
+margin_bottom = 2813.0
+texture = ExtResource( 13 )
 
 [node name="Menu" type="VBoxContainer" parent="."]
-margin_left = 120.0
-margin_top = 80.0
-margin_right = 1160.0
-margin_bottom = 640.0
+margin_left = 180.0
+margin_top = 237.0
+margin_right = 1697.0
+margin_bottom = 843.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
-margin_right = 1040.0
-margin_bottom = 560.0
-size_flags_vertical = 3
+margin_right = 1517.0
+margin_bottom = 606.0
+custom_constants/separation = 191
 
-[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 518.0
-margin_bottom = 560.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 80
-alignment = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 360.0
+margin_bottom = 606.0
+custom_constants/separation = 15
+alignment = 2
 
-[node name="NewGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
-margin_top = 110.0
-margin_right = 518.0
-margin_bottom = 170.0
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow/VBoxContainer"]
+margin_top = 34.0
+margin_right = 360.0
+margin_bottom = 591.0
+custom_constants/separation = 47
+alignment = 2
 
-[node name="RulesButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
-margin_top = 250.0
-margin_right = 518.0
-margin_bottom = 310.0
+[node name="NewGameButton" parent="Menu/CenterRow/VBoxContainer/Buttons" instance=ExtResource( 2 )]
+margin_right = 360.0
+margin_bottom = 154.0
+rect_min_size = Vector2( 343, 137 )
 
-[node name="CreditsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
-margin_top = 390.0
-margin_right = 518.0
-margin_bottom = 450.0
+[node name="RulesButton" parent="Menu/CenterRow/VBoxContainer/Buttons" instance=ExtResource( 3 )]
+margin_top = 201.0
+margin_bottom = 355.0
+rect_min_size = Vector2( 343, 137 )
+toggle_mode = true
+
+[node name="CreditsButton" parent="Menu/CenterRow/VBoxContainer/Buttons" instance=ExtResource( 1 )]
+margin_top = 402.0
+margin_right = 360.0
+margin_bottom = 557.0
+rect_min_size = Vector2( 343, 137 )
+toggle_mode = true
+texture_pressed = ExtResource( 12 )
+
+[node name="Control" type="Control" parent="Menu/CenterRow/VBoxContainer"]
+margin_top = 606.0
+margin_right = 360.0
+margin_bottom = 606.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
-margin_left = 522.0
-margin_right = 1040.0
-margin_bottom = 560.0
+margin_left = 551.0
+margin_right = 1517.0
+margin_bottom = 606.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Menu/CenterRow/CenterContainer"]
-margin_left = 22.0
-margin_top = 155.0
-margin_right = 495.0
-margin_bottom = 404.0
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color_shadow = Color( 1, 0.592157, 0, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 5
-text = "ROLLING
-STORIES"
+[node name="TextureRect" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
+margin_right = 966.0
+margin_bottom = 606.0
+texture = ExtResource( 4 )
 
 [node name="PopupRules" parent="." instance=ExtResource( 8 )]
 
-[node name="MenuInicialPopup" parent="." instance=ExtResource( 7 )]
-visible = false
-margin_top = -4.76837e-07
+[node name="PopupCredits" parent="." instance=ExtResource( 10 )]
 
 [node name="FadeIn" parent="." instance=ExtResource( 5 )]
 visible = false
-[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
-[connection signal="pressed" from="Menu/CenterRow/Buttons/NewGameButton" to="." method="_on_NewGameButton_pressed"]
-[connection signal="pressed" from="Menu/CenterRow/Buttons/RulesButton" to="." method="_on_RulesButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/VBoxContainer/Buttons/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/VBoxContainer/Buttons/RulesButton" to="." method="_on_RulesButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/VBoxContainer/Buttons/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

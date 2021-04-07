@@ -2,14 +2,18 @@ extends Control
 
 var exitPopUp
 var rulesPopUp
-var show = false
-export (Color, RGB) var mouse_out
-export (Color, RGB) var mouse_over
+var creditsPopUp
+var menuPopUp
+var showCredits = false
+var showRules = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	exitPopUp = get_node("MenuInicialPopup")
+	exitPopUp = get_node("MenuButtonPopUp")
 	rulesPopUp = get_node("PopupRules")
+	creditsPopUp = get_node("PopupCredits")
+	GLOBAL.dicesUsed.clear();
+	GLOBAL.exportText = "";
 	pass
 
 #Troca de cena quando o sinal de que o Fade In terminou chega
@@ -23,18 +27,29 @@ func _on_NewGameButton_pressed():
 	$FadeIn.fade_in()
 	pass # Replace with function body.
 
-# Abre o menu para sair dojogo
-func _on_Exit_pressed():
-	exitPopUp.show()
-	pass # Replace with function body.
 
 # Abre o menu das regras
 func _on_RulesButton_pressed():
-	if (show == false):
+	if (showRules == false):
 		rulesPopUp.show()
-		show = true
+		creditsPopUp.hide()
+		get_node("Menu/CenterRow/VBoxContainer/Buttons/CreditsButton").pressed = false
+		showCredits = false
+		showRules = true
 	else:
 		rulesPopUp.hide()
-		show = false
+		showRules = false
 	pass # Replace with function body.
 
+# Abre o menu de créditos
+func _on_CreditsButton_pressed():
+	if (showCredits == false):
+		creditsPopUp.show()
+		rulesPopUp.hide()
+		get_node("Menu/CenterRow/VBoxContainer/Buttons/RulesButton").pressed = false
+		showRules = false
+		showCredits = true
+	else:
+		creditsPopUp.hide()
+		showCredits = false
+	pass # Replace with function body.

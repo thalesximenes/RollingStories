@@ -1,0 +1,230 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://res/buttons/animation_tree.gd" type="Script" id=1]
+[ext_resource path="res://res/Assets/Empty_1@2x.png" type="Texture" id=2]
+[ext_resource path="res://res/Assets/Full@2x.png" type="Texture" id=3]
+[ext_resource path="res://res/Assets/Sad_4.png" type="Texture" id=4]
+[ext_resource path="res://res/Assets/Artboard 1@4x.png" type="Texture" id=5]
+[ext_resource path="res://res/Assets/Smile_1.png" type="Texture" id=6]
+[ext_resource path="res://res/Assets/Knob Shadow.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "ToggleOff"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("NinePatchRect3:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 154, 4.4 ), Vector2( 4, 4.4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NinePatchRect3/Sad:offset")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 40, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NinePatchRect3/Smile:offset")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -40, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("OnBar:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Blur:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 185.811, 32.549 ), Vector2( 32.549, 32.549 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "ToggleOn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("NinePatchRect3:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4, 4.4 ), Vector2( 154, 4.4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NinePatchRect3/Sad:offset")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 40, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NinePatchRect3/Smile:offset")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -40, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("OnBar:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Blur:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 32.549, 32.549 ), Vector2( 185.811, 32.549 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "ToggleOff"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "ToggleOn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=5]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachine" id=7]
+states/ToggleOff/node = SubResource( 3 )
+states/ToggleOff/position = Vector2( 619, 73 )
+states/ToggleOn/node = SubResource( 4 )
+states/ToggleOn/position = Vector2( 213, 73 )
+transitions = [ "ToggleOn", "ToggleOff", SubResource( 5 ), "ToggleOff", "ToggleOn", SubResource( 6 ) ]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=8]
+
+[node name="Toggle" type="CheckButton"]
+anchor_right = 0.109375
+anchor_bottom = 0.0569444
+margin_right = 1.52588e-05
+margin_bottom = -0.999947
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="OffBar" type="NinePatchRect" parent="."]
+margin_right = 140.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 140, 41 )
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OnBar" type="NinePatchRect" parent="."]
+margin_right = 140.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 140, 41 )
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Blur" type="Sprite" parent="."]
+position = Vector2( 185.811, 32.549 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="."]
+margin_left = 154.0
+margin_top = 4.4
+margin_right = 189.0
+margin_bottom = 39.4
+rect_scale = Vector2( 1.5, 1.5 )
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="NinePatchRect3"]
+position = Vector2( 0.444946, 0.5 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Sad" type="Sprite" parent="NinePatchRect3"]
+position = Vector2( 17, 17.5 )
+texture = ExtResource( 4 )
+offset = Vector2( 40, 0 )
+
+[node name="Smile" type="Sprite" parent="NinePatchRect3"]
+position = Vector2( 17, 17.5 )
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ToggleOff = SubResource( 1 )
+anims/ToggleOn = SubResource( 2 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 7 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 8 )
+script = ExtResource( 1 )
+[connection signal="toggled" from="." to="AnimationTree" method="_on_Toggle_toggled"]
