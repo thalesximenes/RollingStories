@@ -61,6 +61,7 @@ func set_images():
 
 # Abre a tela de seleção do dado
 func _on_Button_pressed(extra_arg_0):
+	get_node("AudioStreamPlayer").play(0.60)
 	dicePopupImage.set_texture(GLOBAL.selectedDicesPath[GLOBAL.dicesRolled[extra_arg_0]])
 
 	get_node(dices[extra_arg_0]).disabled = true;
@@ -89,7 +90,8 @@ func _on_DiceSelectedGamePopup_hide():
 # Reinicia a rodada
 func _on_Settings_pressed():
 	GLOBAL.dicesUsed.clear();
-	get_tree().change_scene("res://res/RollDicesScreen.tscn")
+	$FadeIn.show()
+	$FadeIn.fade_in()
 	pass
 
 # Inicia o time após a segunda aparição do Guia
@@ -98,3 +100,8 @@ func _on_NormalModeGuidePopup_hide():
 		dicePopup.show();
 		timer.start();
 	pass
+
+
+func _on_FadeIn_fade_finished():
+	get_tree().change_scene("res://res/RollDicesScreen.tscn")
+	pass # Replace with function body.

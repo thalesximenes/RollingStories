@@ -12,9 +12,13 @@ func _ready():
 
 func _on_Toggle_toggled(button_pressed):
 	if button_pressed:
+		#if (GLOBAL.soundStatus):
+			#get_parent().get_node("AudioStreamPlayer").play(0.60)
 		self["parameters/playback"].travel('ToggleOn')
 		GLOBAL.musicStatus = true;
 	else:
+		#if (GLOBAL.soundStatus):
+			#get_parent().get_node("AudioStreamPlayer").play(0.60)
 		self["parameters/playback"].travel('ToggleOff')
 		GLOBAL.musicStatus = false;
 		

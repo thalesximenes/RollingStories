@@ -3,7 +3,6 @@
 [ext_resource path="res://res/buttons/MenuButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://res/Assets/Popup/Retornar.png" type="Texture" id=2]
 
-
 [node name="BackButton" instance=ExtResource( 1 )]
 margin_right = 60.0
 margin_bottom = 60.0

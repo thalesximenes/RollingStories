@@ -37,6 +37,7 @@ func _process(delta):
 
 #Reseta o cronômetro ao mudar de dado
 func _on_CheckButton_pressed():
+	get_node("AudioStreamPlayer").play(0.60)
 	ms = 5;
 	s = 0;
 	m = 1; 
@@ -52,6 +53,8 @@ func _on_Timer_timeout():
 
 # Faz aparecer o popup de escrever
 func _on_Button_pressed():
+	if (GLOBAL.soundStatus):
+		get_node("AudioStreamPlayer").play(0.60)
 	if (popup.visible):
 		popup.hide();
 	else:

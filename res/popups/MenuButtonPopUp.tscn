@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://res/popups/PopupHelp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://res/Assets/Popup/Menu/Sair.png" type="Texture" id=2]
 [ext_resource path="res://res/popups/menu_button_popup.gd" type="Script" id=3]
-[ext_resource path="res://res/Assets/Buttons/Sair.png" type="Texture" id=4]
+[ext_resource path="res://res/Assets/Popup/Sair.png" type="Texture" id=4]
 [ext_resource path="res://res/buttons/ToggleButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://res/buttons/ToggleButtonSound.tscn" type="PackedScene" id=6]
 [ext_resource path="res://res/Assets/Popup/Menu/Window.png" type="Texture" id=7]
@@ -11,6 +11,8 @@
 [ext_resource path="res://res/Assets/Popup/Menu/Som.png" type="Texture" id=9]
 [ext_resource path="res://res/Assets/Popup/Menu/Música.png" type="Texture" id=10]
 [ext_resource path="res://res/popups/LeavePopup.tscn" type="PackedScene" id=11]
+[ext_resource path="res://res/buttons/MenuButton.tscn" type="PackedScene" id=12]
+[ext_resource path="res://res/Assets/Sounds/Clique botões.wav" type="AudioStream" id=13]
 
 [node name="MenuButtonPopUp" type="Popup"]
 anchor_right = 1.0
@@ -42,15 +44,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="TextureButton" parent="."]
+[node name="Button" parent="." instance=ExtResource( 12 )]
 margin_left = 1260.0
 margin_top = 339.0
 margin_right = 1314.0
 margin_bottom = 394.0
 texture_normal = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 712.0
@@ -152,25 +151,27 @@ margin_right = 516.0
 margin_bottom = 333.0
 size_flags_vertical = 3
 
-[node name="HelpButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer4"]
+[node name="HelpButton" parent="HBoxContainer/VBoxContainer/HBoxContainer4" instance=ExtResource( 12 )]
 margin_right = 256.0
 margin_bottom = 136.0
 texture_normal = ExtResource( 8 )
 
-[node name="LeaveButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer4"]
+[node name="LeaveButton" parent="HBoxContainer/VBoxContainer/HBoxContainer4" instance=ExtResource( 12 )]
 margin_left = 260.0
 margin_right = 516.0
 margin_bottom = 136.0
 texture_normal = ExtResource( 2 )
 
 [node name="PopupHelp" parent="." instance=ExtResource( 1 )]
-visible = false
 margin_left = 530.0
 margin_top = 284.0
 margin_right = 1425.0
 margin_bottom = 844.0
 
 [node name="LeavePopup" parent="." instance=ExtResource( 11 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer4/HelpButton" to="." method="_on_HelpButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer4/LeaveButton" to="." method="_on_LeaveButton_pressed"]

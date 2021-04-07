@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://res/popups/ModesPopUp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://res/Texture.tscn" type="PackedScene" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://res/Assets/AnimatedFrames/FRAME 4.png" type="Texture" id=18]
 [ext_resource path="res://res/Assets/AnimatedFrames/FRAME 7.png" type="Texture" id=19]
 [ext_resource path="res://res/Assets/AnimatedFrames/FRAME 14.png" type="Texture" id=20]
+[ext_resource path="res://res/Assets/Sounds/Clique botões.wav" type="AudioStream" id=21]
+[ext_resource path="res://res/Assets/Sounds/Som dado.wav" type="AudioStream" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -36,6 +38,12 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
 
 [node name="Texture" parent="." instance=ExtResource( 2 )]
 margin_right = 5001.12
@@ -54,7 +62,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Button"]
 position = Vector2( 390, 365 )
-scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 1 )
 
 [node name="TextureRect3" type="TextureRect" parent="."]

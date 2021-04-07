@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://res/Assets/Buttons/Jogar.png" type="Texture" id=1]
+[ext_resource path="res://res/buttons/new_game_button.gd" type="Script" id=2]
+[ext_resource path="res://res/Assets/Sounds/Clique botões.wav" type="AudioStream" id=3]
 
 [node name="TextureButton" type="TextureButton"]
 margin_right = 40.0
 margin_bottom = 40.0
 texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+mix_target = 2
+[connection signal="pressed" from="." to="." method="_on_TextureButton_pressed"]

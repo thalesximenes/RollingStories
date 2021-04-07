@@ -74,6 +74,8 @@ func _on_Timer_timeout():
 	
 # Vai para o próximo dado
 func _on_CheckButton_pressed():
+	if (GLOBAL.soundStatus):
+		get_node("AudioStreamPlayer").play(0.60)
 	ms = 5;
 	s = 30;
 	selectedDices += 1;
@@ -92,6 +94,8 @@ func _on_RapidModeGuidePopup_hide():
 
 # Abre o Menu
 func _on_TextureButton_pressed():
+	if (GLOBAL.soundStatus):
+		get_node("AudioStreamPlayer").play(0.60)
 	menuPopup.show()
 	timer.stop();
 	pass # Replace with function body.
@@ -104,6 +108,14 @@ func _on_ModesPopUp_hide():
 
 # Reinicia a partida, escolhendo novos dados
 func _on_TextureButton2_pressed():
+	if (GLOBAL.soundStatus):
+		get_node("AudioStreamPlayer").play(0.60)
 	GLOBAL.dicesUsed.clear();
+	$FadeIn.show()
+	$FadeIn.fade_in()
+	pass # Replace with function body.
+
+
+func _on_FadeIn_fade_finished():
 	get_tree().change_scene("res://res/RollDicesScreen.tscn")
 	pass # Replace with function body.

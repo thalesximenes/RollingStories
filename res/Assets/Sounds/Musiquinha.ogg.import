@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Musiquinha.ogg-b90ffba9a1cb8c7675ad037b76d7f14e.oggstr"
+
+[deps]
+
+source_file="res://res/Assets/Sounds/Musiquinha.ogg"
+dest_files=[ "res://.import/Musiquinha.ogg-b90ffba9a1cb8c7675ad037b76d7f14e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -17,6 +17,7 @@ func _on_BackButton_pressed():
 			get_node("Menu/PageDisplay/Pag1").show()
 			get_node("Menu/Page/SecondPage").hide()
 			get_node("Menu/PageDisplay/Pag2").hide()
+			get_node("Menu/Page/VBoxContainer/BackButton").disabled = true
 			get_node("Menu/Page/VBoxContainer/BackButton").modulate = Color(0.266667, 0.266667, 0.266667)
 		3:
 			page -= 1
@@ -24,6 +25,7 @@ func _on_BackButton_pressed():
 			get_node("Menu/PageDisplay/Pag2").show()
 			get_node("Menu/Page/ThirdPage").hide()
 			get_node("Menu/PageDisplay/Pag3").hide()
+			get_node("Menu/Page/VBoxContainer2/FowardButton").disabled = false
 			get_node("Menu/Page/VBoxContainer2/FowardButton").modulate = Color(1, 1, 1)
 	pass # Replace with function body.
 
@@ -36,6 +38,7 @@ func _on_FowardButton_pressed():
 			get_node("Menu/PageDisplay/Pag1").hide()
 			get_node("Menu/Page/SecondPage").show()
 			get_node("Menu/PageDisplay/Pag2").show()
+			get_node("Menu/Page/VBoxContainer/BackButton").disabled = false
 			get_node("Menu/Page/VBoxContainer/BackButton").modulate = Color(1, 1, 1)
 		2:
 			page+=1
@@ -43,6 +46,7 @@ func _on_FowardButton_pressed():
 			get_node("Menu/PageDisplay/Pag2").hide()
 			get_node("Menu/Page/ThirdPage").show()
 			get_node("Menu/PageDisplay/Pag3").show()
+			get_node("Menu/Page/VBoxContainer2/FowardButton").disabled = true
 			get_node("Menu/Page/VBoxContainer2/FowardButton").modulate = Color(0.266667, 0.266667, 0.266667)
 	pass # Replace with function body.
 

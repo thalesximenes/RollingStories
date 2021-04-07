@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://res/normal_mode_screen.gd" type="Script" id=1]
 [ext_resource path="res://res/popups/ModesPopUp.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://res/popups/NormalModeGuidePopup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://res/popups/ContinuePopup.tscn" type="PackedScene" id=10]
 [ext_resource path="res://res/popups/continue_popup_normal_mode.gd" type="Script" id=11]
+[ext_resource path="res://res/buttons/MenuButton.tscn" type="PackedScene" id=12]
+[ext_resource path="res://res/Assets/Sounds/Clique botões.wav" type="AudioStream" id=13]
+[ext_resource path="res://res/fade_in/FadeIn.tscn" type="PackedScene" id=14]
 
 [node name="DiceScreen" type="Control"]
 anchor_right = 1.0
@@ -19,6 +22,9 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
 
 [node name="Texture" parent="." instance=ExtResource( 5 )]
 margin_right = 5001.0
@@ -34,27 +40,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Restart" type="Button" parent="."]
-margin_left = 1642.0
-margin_top = 75.0
-margin_right = 1724.0
-margin_bottom = 151.0
-icon = ExtResource( 4 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Restart" parent="." instance=ExtResource( 12 )]
+margin_left = 1648.0
+margin_top = 75.6216
+margin_right = 1718.0
+margin_bottom = 145.622
+texture_normal = ExtResource( 4 )
 
-[node name="Exit" type="Button" parent="."]
-margin_left = 1742.67
-margin_top = 80.0
-margin_right = 1844.67
-margin_bottom = 150.0
-icon = ExtResource( 7 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Exit" parent="." instance=ExtResource( 12 )]
+margin_left = 1748.67
+margin_top = 87.5
+margin_right = 1838.67
+margin_bottom = 141.5
+texture_normal = ExtResource( 7 )
 
 [node name="Dices" type="HBoxContainer" parent="."]
 margin_left = 534.0
@@ -273,6 +271,12 @@ margin_bottom = 1080.0
 
 [node name="ContinuePopup" parent="." instance=ExtResource( 10 )]
 script = ExtResource( 11 )
+
+[node name="FadeIn2" parent="ContinuePopup" instance=ExtResource( 14 )]
+visible = false
+
+[node name="FadeIn" parent="." instance=ExtResource( 14 )]
+visible = false
 [connection signal="pressed" from="Restart" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Dices/VBoxContainer/Row0/Column0/Button" to="." method="_on_Button_pressed" binds= [ 0 ]]
@@ -286,3 +290,5 @@ script = ExtResource( 11 )
 [connection signal="pressed" from="Dices/VBoxContainer/Row2/Column2/Button" to="." method="_on_Button_pressed" binds= [ 8 ]]
 [connection signal="hide" from="DiceSelectedGamePopup" to="." method="_on_DiceSelectedGamePopup_hide"]
 [connection signal="hide" from="NormalModeGuidePopup" to="." method="_on_NormalModeGuidePopup_hide"]
+[connection signal="fade_finished" from="ContinuePopup/FadeIn2" to="ContinuePopup" method="_on_FadeIn2_fade_finished"]
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

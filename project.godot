@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GLOBAL="*res://res/global.gd"
+BACKGROUND_SOUND="*res://res/BackgroundSound.tscn"
 
 [display]
 

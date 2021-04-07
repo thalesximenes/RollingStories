@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://res/buttons/animation_tree.gd" type="Script" id=1]
 [ext_resource path="res://res/Assets/Empty_1@2x.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://res/Assets/Artboard 1@4x.png" type="Texture" id=5]
 [ext_resource path="res://res/Assets/Smile_1.png" type="Texture" id=6]
 [ext_resource path="res://res/Assets/Knob Shadow.png" type="Texture" id=7]
+[ext_resource path="res://res/Assets/Sounds/Clique botões.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "ToggleOff"
@@ -165,6 +166,9 @@ margin_bottom = -0.999947
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 
 [node name="OffBar" type="NinePatchRect" parent="."]
 margin_right = 140.0

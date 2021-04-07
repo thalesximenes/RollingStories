@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://res/popups/MenuPopup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://res/Assets/Popup/Confirm/Continuar.png" type="Texture" id=2]
 [ext_resource path="res://res/popups/continue_popup.gd" type="Script" id=3]
+[ext_resource path="res://res/fade_in/FadeIn.tscn" type="PackedScene" id=4]
 
 [node name="ContinuePopup" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -18,5 +19,9 @@ margin_left = 119.0
 margin_right = 631.0
 margin_bottom = 116.0
 texture = ExtResource( 2 )
+
+[node name="FadeIn" parent="." index="3" instance=ExtResource( 4 )]
+visible = false
 [connection signal="pressed" from="HBoxContainer2/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_YesButton_pressed"]
 [connection signal="pressed" from="HBoxContainer2/VBoxContainer/HBoxContainer/NoButton" to="." method="_on_NoButton_pressed"]
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

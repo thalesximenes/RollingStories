@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://res/Assets/Popup/SelectedMenu/Próximo.png" type="Texture" id=1]
 [ext_resource path="res://res/Font/londrinasolid_108.tres" type="DynamicFont" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://res/Assets/Popup/Enviar.png" type="Texture" id=9]
 [ext_resource path="res://res/Font/londrinasolid_28.tres" type="DynamicFont" id=10]
 [ext_resource path="res://res/popups/text_edit.gd" type="Script" id=11]
+[ext_resource path="res://res/Assets/Sounds/Clique botões.wav" type="AudioStream" id=12]
+[ext_resource path="res://res/buttons/MenuButton.tscn" type="PackedScene" id=13]
 
 [node name="DiceSelectedPopup" type="Popup"]
 anchor_right = 1.0
@@ -19,6 +21,9 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -194,6 +199,7 @@ custom_fonts/font = ExtResource( 10 )
 custom_colors/symbol_color = Color( 0.576471, 0.568627, 0.568627, 1 )
 custom_colors/font_color = Color( 0.576471, 0.568627, 0.568627, 1 )
 custom_colors/background_color = Color( 0.992157, 0.984314, 0.980392, 1 )
+custom_colors/number_color = Color( 0.576471, 0.568627, 0.568627, 1 )
 text = "Escreva a história aqui"
 syntax_highlighting = true
 wrap_enabled = true
@@ -213,7 +219,7 @@ margin_top = 25.0
 margin_right = 81.0
 margin_bottom = 106.0
 
-[node name="TextureButton" type="TextureButton" parent="Popup/TextureRect/HBoxContainer/VBoxContainer/CenterContainer"]
+[node name="TextureButton" parent="Popup/TextureRect/HBoxContainer/VBoxContainer/CenterContainer" instance=ExtResource( 13 )]
 margin_right = 81.0
 margin_bottom = 81.0
 texture_normal = ExtResource( 9 )
