@@ -1,4 +1,4 @@
-# Equipe Indecisos
+# Equipe <s>In</s>decisos
 
 ## Rolling Stories
 
